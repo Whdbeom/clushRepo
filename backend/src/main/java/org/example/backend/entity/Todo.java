@@ -1,5 +1,6 @@
 package org.example.backend.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Data;
 import java.time.LocalDateTime;
@@ -20,6 +21,7 @@ public class Todo {
     private String description;
 
     @Column(name = "is_completed", columnDefinition = "BOOLEAN DEFAULT FALSE")
+    @JsonProperty("isCompleted")
     private boolean isCompleted;
 
     @Column(name = "due_date")

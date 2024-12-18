@@ -9,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/todo")
@@ -17,9 +19,10 @@ public class TodoController {
     private final TodoService todoService;
 
     // 투두 가져오기
-    @GetMapping(value = "/test")
-    public String test(){
-        return "asdf";
+    @GetMapping(value = "/getTodo")
+    public List<Todo> getTodo(){
+        List<Todo> todoList = todoService.getTodo();
+        return todoList;
     }
 
     // 투두 입력
@@ -40,10 +43,10 @@ public class TodoController {
         }
     }
 
-    // 투두 완료
+    // 투두 상태변경 (완료 / 취소)
     @PatchMapping("/complete/{id}")
-    public ResponseEntity<Todo> markTodoAsCompleted(@PathVariable("id") Long id) {
-        Todo updatedTodo = todoService.markAsCompleted(id);
+    public ResponseEntity<Todo> changeTodoStatus(@PathVariable("id") Long id) {
+        Todo updatedTodo = todoService.changeTodoStatus(id);
         if (updatedTodo != null) {
             return ResponseEntity.ok(updatedTodo);
         } else {
