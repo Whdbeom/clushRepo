@@ -42,7 +42,6 @@ public class EventController {
     @Operation(summary = "일정 수정", description = "일정 정보를 수정합니다.")
     @PutMapping("/{id}")
     public ResponseEntity<Event> updateEvent(@PathVariable Long id, @RequestBody Event event) {
-        System.out.println("이벤트객체~!~!" + event);
         Event updatedEvent = eventService.updateEvent(id, event);
         return ResponseEntity.ok(updatedEvent);
     }

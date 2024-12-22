@@ -22,7 +22,5 @@ public class Event {
 
     @Column(name = "end")
     private LocalDateTime end;
-
-    private boolean allday;
 }
 

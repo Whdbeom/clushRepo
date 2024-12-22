@@ -81,4 +81,6 @@ class EventControllerTest {
 
         verify(eventService, times(1)).deleteEvent(eventId);
     }
+
+
 }
