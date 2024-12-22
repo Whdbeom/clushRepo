@@ -14,6 +14,4 @@ public interface TodoRepository extends JpaRepository<Todo, Long> {
     // 미완료된 투두 조회
     List<Todo> findByIsCompletedFalse();
 
-    // 제목에 특정 키워드가 포함된 투두 검색
-    List<Todo> findByTitleContaining(String keyword);
 }

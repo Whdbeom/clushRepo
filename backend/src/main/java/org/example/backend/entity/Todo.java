@@ -18,29 +18,17 @@ public class Todo {
     @Column(nullable = false)
     private String title;
 
-    private String description;
-
     @Column(name = "is_completed", columnDefinition = "BOOLEAN DEFAULT FALSE")
     @JsonProperty("isCompleted")
     private boolean isCompleted;
 
-    @Column(name = "due_date")
-    private LocalDateTime dueDate;
-
     @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;
 
-    @Column(name = "updated_at")
-    private LocalDateTime updatedAt;
 
     @PrePersist
     public void prePersist() {
         createdAt = LocalDateTime.now();
-    }
-
-    @PreUpdate
-    public void preUpdate(){
-        updatedAt = LocalDateTime.now();
     }
 
 }
