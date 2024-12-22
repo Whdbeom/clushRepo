@@ -20,15 +20,15 @@
 
 ## 사용한 라이브러리
 # 백엔드
-Spring Boot Starter Data JPA
-Spring Boot Starter Web
-Lombok
-Springdoc OpenAPI
-JUnit Platform Launcher
+* Spring Boot Starter Data JPA
+* Spring Boot Starter Web
+* Lombok
+* Springdoc OpenAPI
+* JUnit Platform Launcher
 # 프론트엔드
-styled-components
-react-fullcalendar
-react-modal
+* styled-components
+* react-fullcalendar
+* react-modal
 
 ## 동작방식
 
